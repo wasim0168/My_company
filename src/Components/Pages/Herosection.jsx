@@ -29,7 +29,7 @@ const Herosection = () => {
   </h1>
        
  <p style={{color:'white' , fontweight:'bold', fontSize:'22px', margin:'0 auto'}}>
-  Resicode is a web development company helping startups, businesses, and enterprises build user-friendly and powerful web solutions that drive growth and success.
+  Resicode Solutions is a web development company helping startups, businesses, and enterprises build user-friendly and powerful web solutions that drive growth and success.
  </p>
         <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 sm:mt-16">
           <button className="hero-button bg-transparent text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl border-2 border-yellow-300 hover:bg-yellow-300 hover:text-black">
