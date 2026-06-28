@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from "../Logos/jk_auto.png"
+// Use a different existing image or placeholder
+import logo from "../Logos/wasim.jpg"; // Using existing image as fallback
 import logo3 from '../Logos/WhatsApp Image 2025-08-22 at 23.05.05_781dc1c4.jpg';
 
 const OurClients = () => {
@@ -7,7 +8,7 @@ const OurClients = () => {
     {
       id: 1,
       name: "JK Automobile",
-      logo: logo,  // ← FIXED: Changed from logo1 to logo
+      logo: logo, // Using wasim.jpg as fallback
       industry: "Automotive",
       testimonial:
         "Resicode delivered exceptional results that exceeded our expectations. Their team is highly professional and skilled.",
