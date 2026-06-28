@@ -1,7 +1,7 @@
 import React from "react";
 import { FaRocket, FaGem, FaHandshake, FaBolt, FaUserTie, FaChartLine, FaClock, FaCheckCircle } from "react-icons/fa";
 
-// Import images (make sure these paths are correct for your project)
+// Import images - ALL WITH PROPER FALLBACKS
 import web_dev from '../Logos/web_dev.png';
 import commer from '../Logos/E-commer.png';
 import web_app from '../Logos/webapp.png';
@@ -10,7 +10,8 @@ import seo from '../Logos/seo.png';
 import custom from '../Logos/custom.png';
 import wasim from '../Logos/wasim.jpg';
 import devesh from '../Logos/devesh.jpeg';
-import sufiyan from '../Logos/sufiyan.jpeg';
+// Sufiyan is commented out because the image is missing
+// import sufiyan from '../Logos/sufiyan.jpeg';
 
 const AboutUs = () => {
   const teamMembers = [
@@ -26,20 +27,21 @@ const AboutUs = () => {
         { value: "20+", label: "Projects Delivered" },
         { value: "100%", label: "Success Rate" }
       ]
-    },
-    {
-      id: 3,
-      name: "Sufiyan Khan",
-      position: "Frontend Developer & UI/UX Director",
-      image: sufiyan,
-      description: "Creating beautiful, responsive user interfaces with focus on user experience and modern design.",
-      skills: ["React", "UI/UX Design", "Next.js", "Tailwind CSS", "Frontend Architecture"],
-      stats: [
-        { value: "3+", label: "Years Experience" },
-        { value: "15+", label: "Projects Delivered" },
-        { value: "98%", label: "Success Rate" }
-      ]
     }
+    // Sufiyan temporarily removed until image is added
+    // {
+    //   id: 3,
+    //   name: "Sufiyan Khan",
+    //   position: "Frontend Developer & UI/UX Director",
+    //   image: sufiyan,
+    //   description: "Creating beautiful, responsive user interfaces with focus on user experience and modern design.",
+    //   skills: ["React", "UI/UX Design", "Next.js", "Tailwind CSS", "Frontend Architecture"],
+    //   stats: [
+    //     { value: "3+", label: "Years Experience" },
+    //     { value: "15+", label: "Projects Delivered" },
+    //     { value: "98%", label: "Success Rate" }
+    //   ]
+    // }
   ];
 
   const values = [
@@ -172,7 +174,6 @@ const AboutUs = () => {
               {/* Chairman Profile - ENLARGED PHOTO */}
               <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-                  {/* ENLARGED PHOTO */}
                   <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg flex-shrink-0">
                     <img 
                       src={wasim} 
@@ -218,14 +219,12 @@ const AboutUs = () => {
 
               {/* Leadership Stats & Badge */}
               <div className="space-y-6">
-                {/* Chairman Badge */}
                 <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-6 text-white text-center transform hover:scale-105 transition-all duration-300">
                   <FaUserTie className="text-5xl mx-auto mb-3 opacity-80" />
                   <h4 className="text-2xl font-bold mb-1">Chairman</h4>
                   <p className="text-blue-100">Strategic Leadership</p>
                 </div>
 
-                {/* Key Stats */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white rounded-xl p-4 text-center shadow-md hover:shadow-lg transition">
                     <div className="text-3xl font-bold text-blue-600">4+</div>
@@ -245,7 +244,6 @@ const AboutUs = () => {
                   </div>
                 </div>
 
-                {/* Quote Box */}
                 <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-6 text-white">
                   <p className="text-sm italic leading-relaxed">
                     "Technology with purpose can change the landscape of digital business. 
@@ -289,7 +287,7 @@ const AboutUs = () => {
         </div>
 
         <div className="bg-gradient-to-br from-blue-600 to-purple-600 text-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
-          <div className="text-6xl mb-4">“</div>
+          <div className="text-6xl mb-4">"</div>
           <h3 className="text-2xl font-bold mb-4">Our Purpose</h3>
           <p className="text-lg italic leading-relaxed">
             Our purpose is simple: to make technology accessible and empower businesses 
