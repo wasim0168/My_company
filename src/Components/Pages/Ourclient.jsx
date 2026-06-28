@@ -1,5 +1,5 @@
 import React from 'react';
-import logo1 from '../Logos/jk_auto.png';
+import logo1 from '../Logos/jk_Auto.png';
 import logo3 from '../Logos/WhatsApp Image 2025-08-22 at 23.05.05_781dc1c4.jpg';
 
 const OurClients = () => {
