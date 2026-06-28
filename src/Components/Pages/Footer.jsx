@@ -79,7 +79,7 @@ const Footer = () => {
               {/* <div className="logo-icon">
                 <HiOutlineSparkles />
               </div> */}
-              <span className="logo-text">RESICODE <span>SOLUTION</span></span>
+              <span className="logo-text">RESICODE SOLUTIONS</span>
             </div>
             <p className="footer-description">
               We are a leading web development and design company dedicated to creating 
@@ -159,7 +159,7 @@ const Footer = () => {
         <div className="footer-container">
           <div className="bottom-content">
             <p className="copyright">
-              &copy; {new Date().getFullYear()} <span>RESICODE SOLUTION</span>. All rights reserved.
+              &copy; {new Date().getFullYear()} RESICODE SOLUTIONS. All rights reserved.
             </p>
             <div className="footer-policies">
               {policyLinks.map((policy, index) => (
