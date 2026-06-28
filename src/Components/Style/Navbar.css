@@ -1,0 +1,614 @@
+/* Navbar.css - External Styles for Navbar Component */
+
+/* ===== Navbar Base Styles ===== */
+.navbar {
+  background: #000000 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Navbar when scrolled - stays solid black (transparent removed) */
+.navbar-scrolled {
+  background: #000000 !important;  /* Solid black instead of transparent */
+  backdrop-filter: none;            /* Removed blur effect */
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Added shadow for depth when scrolled */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+/* Navbar transparent state - removed, keeping solid black */
+.navbar-transparent {
+  background: #000000 !important;
+  backdrop-filter: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Logo Styles ===== */
+.logo-container {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.logo-image {
+  height: 100px;           /* Increased from 80px */
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled .logo-image {
+  height: 85px;            /* Increased from 65px */
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* ===== Navigation Links Container ===== */
+.nav-links-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 60px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled .nav-links-container {
+  background: rgba(0, 0, 0, 0.5);  /* Keeps consistent background */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Nav Link Styles ===== */
+.nav-link {
+  position: relative;
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  background: linear-gradient(135deg, #F59E0B, #EC4899);
+  color: white;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+/* ===== Careers Button ===== */
+.careers-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 20px;
+  background: linear-gradient(135deg, #F59E0B, #EC4899);
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(251, 146, 60, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.careers-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(251, 146, 60, 0.4);
+}
+
+.careers-icon {
+  width: 14px;
+  height: 14px;
+  stroke: white;
+}
+
+/* ===== Mobile Menu Button ===== */
+.mobile-menu-btn {
+  padding: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+  transition: transform 0.3s ease;
+  stroke: white;
+  stroke-width: 2;
+}
+
+.menu-icon.open {
+  transform: rotate(90deg);
+}
+
+/* ===== Mobile Menu ===== */
+.mobile-menu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.mobile-menu.open {
+  max-height: 450px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.mobile-menu-inner {
+  background: #000000;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateX(5px);
+}
+
+.mobile-nav-link.active {
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  color: white;
+}
+
+.mobile-active-dot {
+  width: 5px;
+  height: 5px;
+  background: #FBDB57;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.mobile-careers-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #F59E0B, #EC4899);
+  border: none;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.mobile-careers-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(251, 146, 60, 0.3);
+}
+
+/* ===== Nav Spacer ===== */
+.nav-spacer {
+  height: 80px;           /* Slightly increased to accommodate larger logo */
+  width: 100%;
+}
+
+/* ===== WhatsApp Floating Button ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.whatsapp-icon-wrapper {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  animation: bubble 2s ease-in-out infinite;
+}
+
+.whatsapp-icon {
+  font-size: 30px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover .whatsapp-icon-wrapper {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float:hover .whatsapp-icon {
+  transform: scale(1.1);
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1F2937;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-tooltip::before {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #1F2937;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  right: 75px;
+}
+
+/* WhatsApp Ripple Effect */
+.whatsapp-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 55px;
+  height: 55px;
+  background: rgba(37, 211, 102, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: ripple 2s ease-out infinite;
+  pointer-events: none;
+}
+
+.whatsapp-ripple.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.whatsapp-ripple.delay-2 {
+  animation-delay: 1s;
+}
+
+/* ===== Animations ===== */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(0.8);
+  }
+}
+
+@keyframes bubble {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    width: 55px;
+    height: 55px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 110px;
+    height: 110px;
+    opacity: 0;
+  }
+}
+
+/* ===== Responsive Styles ===== */
+
+/* Tablet (768px - 1023px) */
+@media (max-width: 768px) {
+  .logo-image {
+    height: 70px !important;   /* Increased from 55px */
+  }
+  
+  .navbar-scrolled .logo-image {
+    height: 60px !important;   /* Increased from 48px */
+  }
+  
+  .nav-spacer {
+    height: 70px;              /* Increased from 60px */
+  }
+  
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .whatsapp-icon-wrapper {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .whatsapp-icon {
+    font-size: 24px;
+  }
+  
+  .nav-links-container {
+    gap: 3px;
+    padding: 3px;
+  }
+  
+  .nav-link {
+    padding: 5px 14px;
+    font-size: 12px;
+  }
+  
+  .careers-btn {
+    padding: 5px 14px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile (480px - 767px) */
+@media (max-width: 480px) {
+  .logo-image {
+    height: 55px !important;   /* Increased from 45px */
+  }
+  
+  .navbar-scrolled .logo-image {
+    height: 50px !important;   /* Increased from 40px */
+  }
+  
+  .nav-spacer {
+    height: 65px;              /* Increased from 55px */
+  }
+  
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .whatsapp-icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .whatsapp-icon {
+    font-size: 22px;
+  }
+  
+  .whatsapp-tooltip {
+    display: none;
+  }
+  
+  .careers-btn {
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+  
+  .careers-icon {
+    width: 11px;
+    height: 11px;
+  }
+  
+  .mobile-menu-btn {
+    padding: 6px;
+  }
+  
+  .menu-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Desktop (1024px - 1439px) */
+@media (min-width: 1024px) {
+  .logo-image {
+    height: 95px !important;   /* Increased from 75px */
+  }
+  
+  .nav-spacer {
+    height: 85px;              /* Increased from 75px */
+  }
+}
+
+/* Large Desktop (1440px and above) */
+@media (min-width: 1440px) {
+  .logo-image {
+    height: 100px !important;  /* Increased from 80px */
+  }
+  
+  .navbar-scrolled .logo-image {
+    height: 85px !important;   /* Increased from 65px */
+  }
+  
+  .nav-spacer {
+    height: 90px;              /* Increased from 80px */
+  }
+  
+  .nav-link {
+    padding: 7px 24px;
+    font-size: 16px;
+  }
+  
+  .careers-btn {
+    padding: 7px 24px;
+    font-size: 15px;
+  }
+}
+
+/* Extra Small Devices (below 360px) */
+@media (max-width: 360px) {
+  .logo-image {
+    height: 50px !important;   /* Increased from 40px */
+  }
+  
+  .navbar-scrolled .logo-image {
+    height: 45px !important;   /* Increased from 35px */
+  }
+  
+  .nav-spacer {
+    height: 60px;              /* Increased from 50px */
+  }
+  
+  .nav-link {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+  
+  .mobile-nav-link {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .navbar {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+  
+  .logo-image {
+    height: 45px !important;   /* Increased from 38px */
+  }
+  
+  .nav-spacer {
+    height: 55px;              /* Increased from 45px */
+  }
+  
+  .whatsapp-float {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .whatsapp-icon-wrapper {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .whatsapp-icon {
+    font-size: 20px;
+  }
+  
+  .mobile-menu.open {
+    max-height: 350px;
+  }
+}
+
+/* ===== Accessibility: Reduce Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .logo-image,
+  .nav-link,
+  .careers-btn,
+  .whatsapp-float,
+  .whatsapp-icon-wrapper,
+  .whatsapp-icon,
+  .whatsapp-ripple,
+  .mobile-menu,
+  .menu-icon,
+  .mobile-nav-link {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .nav-active-dot {
+    animation: none;
+  }
+  
+  .whatsapp-ripple {
+    display: none;
+  }
+  
+  .whatsapp-icon-wrapper {
+    animation: none;
+  }
+}
+
+/* ===== Focus Styles for Accessibility ===== */
+.nav-link:focus,
+.careers-btn:focus,
+.mobile-menu-btn:focus,
+.whatsapp-float:focus {
+  outline: 2px solid #FBDB57;
+  outline-offset: 2px;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .navbar,
+  .whatsapp-float,
+  .nav-spacer {
+    display: none !important;
+  }
+}
