@@ -7,7 +7,7 @@ const OurClients = () => {
     {
       id: 1,
       name: "JK Automobile",
-      logo: logo1,
+      logo: logo,  // ← FIXED: Changed from logo1 to logo
       industry: "Automotive",
       testimonial:
         "Resicode delivered exceptional results that exceeded our expectations. Their team is highly professional and skilled.",
@@ -54,7 +54,6 @@ const OurClients = () => {
   const renderLogo = (client) => {
     // ✅ If logo is image
     if (typeof client.logo !== "string" || client.logo.endsWith(".jpg") || client.logo.endsWith(".png")) {
-      // Apply special style if id = 3
       const logoStyle =
         client.id === 3
           ? {
