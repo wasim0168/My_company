@@ -1,0 +1,37 @@
+name: Deploy React App to Hostinger
+
+permissions:
+  contents: write
+  actions: read
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build React App
+        run: npm run build  # Creates 'dist' folder for Vite
+      
+      - name: Deploy to Hostinger
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: build
+          FOLDER: dist  # ← Vite uses 'dist' folder
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
